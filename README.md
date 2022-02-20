@@ -4,4 +4,4 @@ Work in progress⚙🛠
 
 Preview: [kuldeepjambhulkar.github.io](https://kuldeepjambhulkar.github.io)
 
-🔴<sup><sub>This is subbed-sup text</sub></sup>
+<sup><sub>🔴PS: Currently not looking for contributors</sub></sup>
