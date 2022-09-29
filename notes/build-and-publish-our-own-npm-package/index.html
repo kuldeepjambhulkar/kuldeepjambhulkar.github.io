@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Beginner's Guide to create & publish a NPM Package ">
+
+    <meta itemprop="name" content="Let's Build &amp; Publish Your Own NPM Package!">
+    <meta itemprop="description" content="Beginner's Guide to create & publish a NPM Package ">
+    <meta itemprop="image" content="./assets/images/thumbnail.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Let's Build &amp; Publish Your Own NPM Package!">
+    <meta name="twitter:description" content="Beginner's Guide to create & publish a NPM Package ">
+    <meta name="twitter:image" content="./assets/images/thumbnail.png">
+
+    <meta property="og:site_name" content="Kuldeep Jambhulkar - Software developer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://kuldeepjambhulkar.github.io/notes/build-and-publish-our-own-npm-package">
+    <meta property="og:title" content="Let's Build &amp; Publish Your Own NPM Package!">
+    <meta property="og:description" content="Beginner's Guide to create & publish a NPM Package ">
+    <meta property="og:image" content="./assets/images/thumbnail.png">
+
+    <meta name="apple-mobile-web-app-title" content="Kuldeep Jambhulkar">
+    <meta name="application-name" content="Kuldeep Jambhulkar">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicons/high-voltage_26a1.png">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap icon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- CSS file -->
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../blogs.css">
+    <title>Notes | Build & Publish NPM Package</title>
+
+</head>
+<body>
+    <!-- navgation section -->
+    <div class="container m-auto bg-white fixed-top">
+        <div class="row mt-3">
+            <div class="col pt-3">
+                <ul class="list-unstyled text-center">
+                    <li class="dropdown list-inline-item">
+                        <a href="#" class="dropbtn link link-primary text-decoration-none"><i class="bi bi-house-door-fill" style="font-size: 1.2rem;"></i></a>
+                        <div class="dropdown-content">
+                            <a href="/#" class="link link-primary text-decoration-none">Home</a>
+                            <a href="/#Experience" class="link link-primary text-decoration-none">Experience</a>
+                            <a href="/#Skills" class="link link-primary text-decoration-none">Skills</a>
+                            <a href="/#Education" class="link link-primary text-decoration-none">Education</a>
+                        </div>
+                    </p>
+                    
+                    <li class="list-inline-item"><a href="./projects" class="link link-primary text-decoration-none">Projects</a></p>
+                    <li class="list-inline-item"><a href="./notes" class="link link-primary text-decoration-none">Notes</a></p>
+                    <li class="list-inline-item"><a href="/#Contact" class="link link-primary text-decoration-none">Contact</a></p>
+                    <!-- <li class="list-inline-item"><a href="#" class="link link-primary text-decoration-none">Resume <i class="bi bi-cloud-arrow-down-fill"></i></a></p> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main container starts -->
+    <div class="container m-auto" style="margin-top: 7rem !important;">
+        <div class="row mt-5">
+            <div class="col mw-42 text-left m-auto" style="margin-top: 7rem !important;">
+                <h2>Let's Build &amp; Publish Your Own NPM Package!</h2>
+                <br>
+                   <img src="./assets/images/thumbnail.png" class="img-fluid" alt="Responsive image">
+                   <br><br>
+
+                <b>Requirements:</b><br>
+                <p>NodeJs installed on your machine & a registered NPM account!</p>
+                <b>Let&#39;s Get Started!</b> <br><br>
+                <strong>Step 1: Initiating package.json</strong><br><br> 
+                <p>
+                    We will be building a simple
+                    package, which will provide a functionality to convert a normal string
+                    into camelCase string. <br> <br>
+                    <i> Example, 'this is normal string' will be converted to 'thisIsNormalString'.</i>
+                </p>
+                    <p>Create project directory - <code> mkdir camel-it</code></p>
+                     <p>Navigate to the directory - <code> cd camel-it</code></p>
+                     <p>Open this directory in a code editor.(I&#39;ll be using VSCode)</p>
+                     <p>Open the terminal &amp; run <code>npm init</code> command.</p>
+                     <p>
+                       It&#39;ll present you with questions like <br>
+                        - <b> package name </b>(make sure
+                       you provide a unique package-name)  <br>
+                       - <b>version</b> (keep it as it is i.e.
+                       1.0.0) <br>
+                     - <b>description </b>: A short info about the package <br>
+                      - <b>entry point </b>
+                       (index.js): This prompt is important one, since it indicate the entry
+                       point of our package. We will create a file
+                       <code>index.js</code> later. <br>
+                    - <b>test Command </b> as of now, we are not
+                       going to write tests, so this promp can be blank <br>  - <b>git repository </b>: as
+                       of now, we are not initiating github repo, so this can be updated
+                       later. <br>
+                     - <b>keywords </b>: These are words relevant to your package, that
+                       helps the package to get visibility in search results  <br>
+                       - <b>author:</b> You
+                       can put your name here <br>
+                    - <b>license </b>: This is the place where you&#39;ll
+                       mention the license, as of now, we are leaving it blank <br>
+                     - After this,
+                       command line will show us a preview of previous question-answers, if 
+                       everything is okay, type <code>y</code> in terminal - This will create
+                       a <code>package.json</code> file.
+                     </p>
+                   
+                   <p><strong>Initiating index.js</strong></p>
+                
+                     <p>
+                       When we executed the <code>npm init</code> command, one fo the
+                       question was to mention the entry point of our package.
+                     </p>
+                     <p>For us, it was <code>index.js</code></p>
+                     <p>So we will create a new file <code>index.js</code></p>
+                     <p>
+                       In this file, we will write a function, that will convert a string
+                       into camelCase string
+                       <!-- <script src="https://gist.github.com/kuldeepjambhulkar/5be47c318b7352c1d38040f7682dcfb2.js"></script> -->
+
+                       <div class="code">
+                        <pre>
+function camelIt (string) { 
+        const preString = string.split(' ').map( item  => 
+        item.charAt(0).toUpperCase() + item.slice(1)).join('') 
+        return(preString.charAt(0).toLocaleLowerCase() + preString.slice(1))
+    } 
+module.exports = camelIt;
+                        </pre>
+                       </div>
+                     </p>
+                     <p>
+                       Then we will export this function with the
+                       <code>module.exports</code> statement.
+                     </p>
+                     <p>
+                       With this our package is ready to be published, but we need to test it
+                       before publishing.
+                     </p>
+                   
+                   <p><strong>Testing Package Locally</strong></p>
+                
+                     <p>Run <code>npm link</code> command in our package folder</p>
+                     <p>This will allow us to install the package locally.</p>
+                     <p>
+                       Now, create a separate folder <code>test</code>, outside of our
+                       package&#39;s folder.
+                     </p>
+                     <p>Open this <code>test</code> folder in Code editor</p>
+                     <p>
+                       Open the terminal &amp; run command
+                       <code>npm link package-name</code> - in our case,
+                       <code>npm link camel-it</code>
+                     </p>
+                     <p>
+                       This will install our package in the test folder - You can verify this
+                       in the automatically created <code>node_module</code> folder, inside
+                       the <code>test</code> folder
+                     </p>
+                     <p>
+                       create a file <code>script.js</code> where we will use our
+                       package&#39;s functionalities
+                     </p>
+                     <p>
+                       import the package using <code>require</code> statement - const
+                       camelIt = require(&#39;camel-it&#39;)
+                     </p>
+                     <p>
+                       For testing - console.log(camelIt(&#39;this is normal string&#39;)) -
+                       this will return <code>thisIsNormalString</code>
+                     </p>
+                     <p>
+                       Sicne we are getting the expected behavior, we can publish this
+                       package.
+                     </p>
+                   
+                   <p><strong>Publishing Package</strong></p>
+                
+                     <p>To publish packages to npm, you need to sighUp on npm</p>
+                     <p>Once you register, navigate back to our packages folder</p>
+                     <p>run <code>npm login</code> caoomand.</p>
+                     <p>
+                       It&#39;ll ask for credentials - username - password - email - OTP sent
+                       on the email
+                     </p>
+                     <p>once you are logged in, run <code>npm publish</code> command</p>
+                     <p>
+                       If your package-name is unique &amp; other details in the
+                       <code>package.json</code> file are valid, your package will get
+                       published on npm.
+                     </p>
+                     <p>You can verify this by searching your package name on npm</p>
+                   
+                   <p><strong>Adding README.md file</strong></p>
+                
+                     <p>
+                       Once our package is published, it should contain a file that describe
+                       the package &amp; instructions for using the package
+                     </p>
+                     <p>This information is entered in the README.md</p>
+                     <p>
+                       create a file <code>README.md</code>, &amp; enter the description
+                     </p>
+                     <p>After this, navigate to <code>package.json</code> file & update the version from 1.0.0 to 1.0.1 (or to the next version in case if the your base version is not 1.0.0) & then run <code>npm publish</code>.</p> 
+                     <p>There ypu have it, your package is published on npm!</p>     
+                     
+                     <p>Here is mine 👇</p>
+                     <a href="https://www.npmjs.com/package/camel-it">npmjs.com/package/camel-it</a><br> <br>
+                     <img src="./assets/images/result.png" class="img-fluid" alt="Responsive image">
+                     <br><br>
+            </div>
+        </div>
+    </div>
+    <!-- Main container ends -->
+        <!-- Footer starts -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center py-5 bg-light">
+                    <ul class="list-unstyled">
+                        <li class="list-inline-item mb-2">@KuldeepJambhulkar</li><br>
+                        <li class="list-inline-item"><a href="mailto:kuldeepjambhulkar1234@gmail.com" class="link link-primary text-decoration-none" target="_blank">Email</a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/kuldeepjambhulkar/" class="link link-primary text-decoration-none" target="_blank">Linkedin</a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/kuldeepjambhu" class="link link-primary text-decoration-none" target="_blank">Twitter</a></li>
+                        <li class="list-inline-item"><a href="https://github.com/kuldeepjambhulkar" class="link link-primary text-decoration-none" target="_blank">Github</a> <br></li><br>
+                        <li class="list-inline-item text-left mt-2"> <small>V1.0.0 - 2022</small><br></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+        <!-- Footer ends -->
+</body>
+</html>
