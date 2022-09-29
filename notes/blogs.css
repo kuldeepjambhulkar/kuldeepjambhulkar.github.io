@@ -10,3 +10,11 @@
 .btn-back:hover{
     color: #0275d8;
 }
+
+.code{
+    background: whitesmoke;
+    padding: .9rem;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5rem;
+}
